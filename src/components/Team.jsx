@@ -28,7 +28,7 @@ const Team = () => {
                     className="text-center"
                     style={{ marginBottom: '60px' }}
                 >
-                    <h2 style={{ fontSize: '3rem', marginBottom: '15px' }}>Meet the Artists</h2>
+                    <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '15px' }}>Meet the Artists</h2>
                     <div style={{ width: '60px', height: '3px', background: 'var(--color-gold)', margin: '0 auto 20px' }}></div>
                     <p style={{ color: 'var(--color-text-gray)' }}>The talented hands behind your transformation.</p>
                 </motion.div>
@@ -79,9 +79,9 @@ const Team = () => {
                                 </div>
                             </div>
                             <div className="text-center">
-                                <h3 style={{ fontSize: '1.5rem', color: 'var(--color-white)', marginBottom: '5px' }}>{member.name}</h3>
-                                <p style={{ color: 'var(--color-gold)', textTransform: 'uppercase', fontSize: '0.9rem', letterSpacing: '1px', marginBottom: '10px' }}>{member.role}</p>
-                                <p style={{ color: 'var(--color-text-gray)', fontSize: '0.95rem' }}>{member.bio}</p>
+                                <h3 style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', color: 'var(--color-white)', marginBottom: '5px' }}>{member.name}</h3>
+                                <p style={{ color: 'var(--color-gold)', textTransform: 'uppercase', fontSize: 'clamp(0.8rem, 1vw, 0.9rem)', letterSpacing: '1px', marginBottom: '10px' }}>{member.role}</p>
+                                <p style={{ color: 'var(--color-text-gray)', fontSize: 'clamp(0.9rem, 1.2vw, 0.95rem)' }}>{member.bio}</p>
                             </div>
                         </motion.div>
                     ))}

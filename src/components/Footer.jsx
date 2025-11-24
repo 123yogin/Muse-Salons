@@ -46,7 +46,7 @@ const Footer = () => {
                     ))}
                 </motion.div>
 
-                <motion.p variants={itemVariants} style={{ color: 'var(--color-text-gray)', fontSize: '0.8rem' }}>
+                <motion.p variants={itemVariants} style={{ color: 'var(--color-text-gray)', fontSize: 'clamp(0.7rem, 1vw, 0.8rem)' }}>
                     &copy; {new Date().getFullYear()} Muse Unisex Salon. All rights reserved.
                 </motion.p>
             </motion.div>

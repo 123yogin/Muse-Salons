@@ -7,7 +7,7 @@
   --color-dark-gray: #1a1a1a;
   --color-white: #ffffff;
   --color-text-gray: #cccccc;
-  
+
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Lato', sans-serif;
 }
@@ -30,7 +30,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--color-gold);
 }
@@ -100,4 +105,32 @@ ul {
 
 .gold-text {
   color: var(--color-gold);
+}
+
+/* Mobile Responsiveness for 320px screens */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.8rem !important;
+  }
+
+  h3 {
+    font-size: 1.3rem !important;
+  }
 }

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { X } from 'lucide-react';
+import { useState } from 'react';
 
 const galleryImages = [
     {
@@ -54,14 +54,14 @@ const Gallery = () => {
                     className="text-center"
                     style={{ marginBottom: '60px' }}
                 >
-                    <h2 style={{ fontSize: '3rem', marginBottom: '15px' }}>Our Work</h2>
+                    <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '15px' }}>Our Work</h2>
                     <div style={{ width: '60px', height: '3px', background: 'var(--color-gold)', margin: '0 auto 20px' }}></div>
                     <p style={{ color: 'var(--color-text-gray)' }}>Browse our portfolio of transformations.</p>
                 </motion.div>
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(clamp(250px, 40vw, 350px), 1fr))',
                     gap: '20px'
                 }}>
                     {galleryImages.map((image, index) => (
@@ -108,8 +108,8 @@ const Gallery = () => {
                                     color: 'white'
                                 }}
                             >
-                                <h4 style={{ color: 'var(--color-gold)', fontSize: '1.2rem', marginBottom: '5px' }}>{image.title}</h4>
-                                <p style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{image.category}</p>
+                                <h4 style={{ color: 'var(--color-gold)', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', marginBottom: '5px' }}>{image.title}</h4>
+                                <p style={{ fontSize: 'clamp(0.8rem, 1vw, 0.9rem)', textTransform: 'uppercase', letterSpacing: '1px' }}>{image.category}</p>
                             </motion.div>
                         </motion.div>
                     ))}
@@ -137,8 +137,8 @@ const Gallery = () => {
                         padding: '40px'
                     }}
                 >
-                    <div 
-                        onClick={(e) => e.stopPropagation()} 
+                    <div
+                        onClick={(e) => e.stopPropagation()}
                         style={{ position: 'relative', maxWidth: '90%', maxHeight: '90%' }}
                     >
                         <button
@@ -161,7 +161,7 @@ const Gallery = () => {
                             style={{ maxHeight: '85vh', maxWidth: '100%', borderRadius: '4px', boxShadow: '0 0 30px rgba(0,0,0,0.5)' }}
                         />
                         <div style={{ textAlign: 'center', marginTop: '15px' }}>
-                            <h3 style={{ color: 'var(--color-gold)', fontSize: '1.5rem' }}>{selectedImage.title}</h3>
+                            <h3 style={{ color: 'var(--color-gold)', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)' }}>{selectedImage.title}</h3>
                             <p style={{ color: 'var(--color-text-gray)' }}>{selectedImage.category}</p>
                         </div>
                     </div>

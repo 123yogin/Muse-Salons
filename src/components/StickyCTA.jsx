@@ -16,8 +16,8 @@ const StickyCTA = () => {
             }}
             className="sticky-cta"
         >
-            <a 
-                href="#contact" 
+            <a
+                href="#contact"
                 style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -30,7 +30,7 @@ const StickyCTA = () => {
                     boxShadow: '0 4px 15px rgba(212, 175, 55, 0.4)',
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
-                    fontSize: '0.9rem'
+                    fontSize: 'clamp(0.8rem, 1vw, 0.9rem)'
                 }}
             >
                 <CalendarCheck size={20} />

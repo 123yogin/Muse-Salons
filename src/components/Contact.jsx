@@ -17,7 +17,7 @@ const Contact = () => {
                     className="text-center"
                     style={{ marginBottom: '60px' }}
                 >
-                    <h2 style={{ fontSize: '3rem', marginBottom: '15px' }}>Visit Us</h2>
+                    <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '15px' }}>Visit Us</h2>
                     <div style={{ width: '60px', height: '3px', background: 'var(--color-gold)', margin: '0 auto' }}></div>
                 </motion.div>
 
@@ -36,7 +36,7 @@ const Contact = () => {
                         style={{ flex: '1 1 300px', maxWidth: '500px' }}
                     >
                         <div style={{ marginBottom: '30px' }}>
-                            <h3 style={{ fontSize: '1.5rem', marginBottom: '20px', color: 'var(--color-white)' }}>Get in Touch</h3>
+                            <h3 style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', marginBottom: '20px', color: 'var(--color-white)' }}>Get in Touch</h3>
                             <p style={{ color: 'var(--color-text-gray)', marginBottom: '20px' }}>
                                 Ready for your transformation? Book an appointment or visit us today.
                             </p>
@@ -86,7 +86,7 @@ const Contact = () => {
                             border: '1px solid rgba(212, 175, 55, 0.1)'
                         }}
                     >
-                        <h3 style={{ fontSize: '1.5rem', marginBottom: '20px', color: 'var(--color-white)' }}>Send a Message</h3>
+                        <h3 style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', marginBottom: '20px', color: 'var(--color-white)' }}>Send a Message</h3>
                         <form>
                             <div style={{ marginBottom: '15px' }}>
                                 <motion.input

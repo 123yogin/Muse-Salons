@@ -59,7 +59,7 @@ const Header = () => {
                   href={link.href}
                   style={{
                     color: 'var(--color-white)',
-                    fontSize: '14px',
+                    fontSize: 'clamp(12px, 1.5vw, 14px)',
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
                     position: 'relative'
@@ -105,6 +105,24 @@ const Header = () => {
               zIndex: 49
             }}
           >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                background: 'none',
+                border: 'none',
+                color: 'var(--color-gold)',
+                cursor: 'pointer',
+                padding: '10px',
+                zIndex: 50
+              }}
+            >
+              <X size={32} />
+            </button>
+
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '30px', textAlign: 'center' }}>
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -113,7 +131,7 @@ const Header = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     style={{
                       color: 'var(--color-gold)',
-                      fontSize: '24px',
+                      fontSize: 'clamp(20px, 3vw, 24px)',
                       fontFamily: 'var(--font-heading)',
                       textTransform: 'uppercase',
                     }}

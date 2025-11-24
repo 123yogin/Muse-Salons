@@ -21,10 +21,10 @@ const Counter = ({ value, label }) => {
 
     return (
         <div ref={ref}>
-            <h3 style={{ fontSize: '2.5rem', color: 'var(--color-gold)' }}>
+            <h3 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: 'var(--color-gold)' }}>
                 {displayValue}{value === 5 ? '+' : (value === 1000 ? '+' : '+')}
             </h3>
-            <p style={{ textTransform: 'uppercase', fontSize: '0.9rem', letterSpacing: '1px' }}>{label}</p>
+            <p style={{ textTransform: 'uppercase', fontSize: 'clamp(0.8rem, 1vw, 0.9rem)', letterSpacing: '1px' }}>{label}</p>
         </div>
     );
 };
@@ -90,11 +90,11 @@ const About = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         style={{ flex: '1 1 400px' }}
                     >
-                        <h2 style={{ fontSize: '3rem', marginBottom: '25px' }}>About <span className="gold-text">Muse</span></h2>
-                        <p style={{ color: 'var(--color-text-gray)', marginBottom: '20px', fontSize: '1.1rem' }}>
+                        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '25px' }}>About <span className="gold-text">Muse</span></h2>
+                        <p style={{ color: 'var(--color-text-gray)', marginBottom: '20px', fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)' }}>
                             Founded on the belief that everyone deserves to look and feel their absolute best, Muse Unisex Salon is more than just a place to get a haircut. It's a sanctuary of style, luxury, and relaxation.
                         </p>
-                        <p style={{ color: 'var(--color-text-gray)', marginBottom: '30px', fontSize: '1.1rem' }}>
+                        <p style={{ color: 'var(--color-text-gray)', marginBottom: '30px', fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)' }}>
                             Our team of expert stylists and therapists are dedicated to providing personalized care, using only the finest products to ensure you leave feeling rejuvenated and confident.
                         </p>
 

@@ -122,14 +122,31 @@ const Services = () => {
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 {/* Main Services Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
                     className="text-center"
                     style={{ marginBottom: '60px' }}
                 >
-                    <h2 style={{ fontSize: '3.5rem', marginBottom: '15px', color: 'var(--color-gold)', fontFamily: 'var(--font-heading)' }}>Our Services</h2>
-                    <p style={{ color: 'var(--color-text-gray)', fontSize: '1.1rem', letterSpacing: '1px' }}>Experience world-class grooming and styling.</p>
+                    <motion.h2
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '15px', color: 'var(--color-gold)', fontFamily: 'var(--font-heading)' }}
+                    >
+                        Our Services
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        style={{ color: 'var(--color-text-gray)', fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)', letterSpacing: '1px' }}
+                    >
+                        Experience world-class grooming and styling.
+                    </motion.p>
                 </motion.div>
 
                 {/* Tabs */}
@@ -140,7 +157,7 @@ const Services = () => {
                             onClick={() => setActiveTab(tab)}
                             style={{
                                 padding: '15px 40px',
-                                fontSize: '1.2rem',
+                                fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
                                 textTransform: 'uppercase',
                                 letterSpacing: '2px',
                                 background: activeTab === tab ? 'var(--color-gold)' : 'rgba(255,255,255,0.05)',
@@ -168,7 +185,7 @@ const Services = () => {
                     >
                         <div style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 35vw, 400px), 1fr))',
                             gap: '30px'
                         }}>
                             {servicesData[activeTab].categories.map((category, index) => (
@@ -192,7 +209,7 @@ const Services = () => {
                                 >
                                     <h3 style={{
                                         color: 'var(--color-gold)',
-                                        fontSize: '1.8rem',
+                                        fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
                                         marginBottom: '25px',
                                         borderBottom: '1px solid rgba(212, 175, 55, 0.2)',
                                         paddingBottom: '15px',
@@ -212,7 +229,7 @@ const Services = () => {
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 gap: '12px',
-                                                fontSize: '1.1rem'
+                                                fontSize: 'clamp(0.95rem, 1.2vw, 1.1rem)'
                                             }}>
                                                 <ChevronRight size={18} color="var(--color-gold)" />
                                                 {item}
@@ -227,29 +244,62 @@ const Services = () => {
 
                 {/* Wedding Collection Section */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
                     style={{ marginTop: '120px' }}
                 >
                     <div className="text-center" style={{ marginBottom: '60px' }}>
-                        <h2 style={{ fontSize: '3.5rem', marginBottom: '15px', color: 'var(--color-gold)', fontFamily: 'var(--font-heading)' }}>The Wedding Collection</h2>
-                        <p style={{ color: 'var(--color-text-gray)', fontSize: '1.1rem' }}>Curated luxury packages for your special day.</p>
+                        <motion.h2
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '15px', color: 'var(--color-gold)', fontFamily: 'var(--font-heading)' }}
+                        >
+                            The Wedding Collection
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            style={{ color: 'var(--color-text-gray)', fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)' }}
+                        >
+                            Curated luxury packages for your special day.
+                        </motion.p>
                     </div>
 
                     {/* Bridal Packages */}
-                    <h3 style={{ color: 'var(--color-white)', fontSize: '2.5rem', textAlign: 'center', marginBottom: '40px', fontFamily: 'var(--font-heading)' }}>Bridal Packages</h3>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginBottom: '80px' }}>
+                    <motion.h3
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        style={{ color: 'var(--color-white)', fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', textAlign: 'center', marginBottom: '40px', fontFamily: 'var(--font-heading)' }}
+                    >
+                        Bridal Packages
+                    </motion.h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 40vw, 400px), 1fr))', gap: '30px', marginBottom: '80px' }}>
                         {weddingPackages.bridal.map((pkg, index) => (
-                            <WeddingCard key={index} pkg={pkg} icon={<Crown size={30} />} />
+                            <WeddingCard key={index} pkg={pkg} icon={<Crown size={30} />} index={index} />
                         ))}
                     </div>
 
                     {/* Groom Packages */}
-                    <h3 style={{ color: 'var(--color-white)', fontSize: '2.5rem', textAlign: 'center', marginBottom: '40px', fontFamily: 'var(--font-heading)' }}>Groom Packages</h3>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+                    <motion.h3
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        style={{ color: 'var(--color-white)', fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', textAlign: 'center', marginBottom: '40px', fontFamily: 'var(--font-heading)' }}
+                    >
+                        Groom Packages
+                    </motion.h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 40vw, 400px), 1fr))', gap: '30px' }}>
                         {weddingPackages.groom.map((pkg, index) => (
-                            <WeddingCard key={index} pkg={pkg} icon={<Star size={30} />} />
+                            <WeddingCard key={index} pkg={pkg} icon={<Star size={30} />} index={index} />
                         ))}
                     </div>
                 </motion.div>
@@ -258,8 +308,12 @@ const Services = () => {
     );
 };
 
-const WeddingCard = ({ pkg, icon }) => (
+const WeddingCard = ({ pkg, icon, index }) => (
     <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: index * 0.15 }}
         whileHover={{ y: -10, scale: 1.02 }}
         style={{
             background: 'linear-gradient(145deg, rgba(20,20,20,1) 0%, rgba(30,30,30,1) 100%)',
@@ -288,7 +342,7 @@ const WeddingCard = ({ pkg, icon }) => (
         }}>
             {icon}
         </div>
-        <h4 style={{ fontSize: '1.8rem', color: 'var(--color-gold)', marginBottom: '15px', fontFamily: 'var(--font-heading)' }}>{pkg.name}</h4>
+        <h4 style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', color: 'var(--color-gold)', marginBottom: '15px', fontFamily: 'var(--font-heading)' }}>{pkg.name}</h4>
         <p style={{ color: 'var(--color-text-gray)', marginBottom: '25px', fontStyle: 'italic', minHeight: '50px' }}>{pkg.description}</p>
         <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left', flex: 1, marginBottom: '25px' }}>
             {pkg.features.map((feature, i) => (
@@ -298,7 +352,7 @@ const WeddingCard = ({ pkg, icon }) => (
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
-                    fontSize: '1.05rem',
+                    fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
                     borderBottom: '1px dashed rgba(255,255,255,0.1)',
                     paddingBottom: '10px'
                 }}>

@@ -87,7 +87,7 @@ const Hero = () => {
                     variants={textVariants}
                     style={{
                         color: 'var(--color-gold)',
-                        fontSize: '1.5rem',
+                        fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                         letterSpacing: '3px',
                         textTransform: 'uppercase',
                         marginBottom: '20px'
@@ -123,7 +123,7 @@ const Hero = () => {
                     variants={textVariants}
                     transition={{ delay: 0.4 }}
                     style={{
-                        fontSize: '1.2rem',
+                        fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
                         maxWidth: '600px',
                         margin: '0 auto 40px',
                         color: 'var(--color-text-gray)'
@@ -199,7 +199,7 @@ const Hero = () => {
                 }}
                 onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
             >
-                <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '5px' }}>Scroll</span>
+                <span style={{ fontSize: 'clamp(0.7rem, 1vw, 0.8rem)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '5px' }}>Scroll</span>
                 <ChevronDown size={24} color="var(--color-gold)" />
             </motion.div>
         </section>
