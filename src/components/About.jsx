@@ -98,9 +98,9 @@ const About = () => {
                             Our team of expert stylists and therapists are dedicated to providing personalized care, using only the finest products to ensure you leave feeling rejuvenated and confident.
                         </p>
 
-                        <div style={{ display: 'flex', gap: '40px' }}>
-                            <Counter value={5} label="Years Experience" />
-                            <Counter value={1000} label="Happy Clients" />
+                        <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap' }}>
+                            <Counter value={8} label="Years Experience" />
+                            <Counter value={300000} label="Happy Clients" />
                         </div>
                     </motion.div>
                 </div>

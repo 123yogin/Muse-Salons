@@ -4,24 +4,16 @@ import { Instagram } from 'lucide-react';
 const teamMembers = [
     {
         id: 1,
-        name: "Elena Rossi",
-        role: "Master Stylist",
-        image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        bio: "With over 10 years of experience in Milan and New York, Elena specializes in precision cuts and high-fashion styling."
-    },
-    {
-        id: 2,
-        name: "David Chen",
-        role: "Color Specialist",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        bio: "David is a master of balayage and color correction, known for creating natural, sun-kissed looks that last."
-    },
-    {
-        id: 3,
-        name: "Sarah Jenkins",
-        role: "Senior Esthetician",
-        image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        bio: "Sarah's holistic approach to skincare combines advanced treatments with relaxation techniques for glowing results."
+        name: "Darshan Nai",
+        role: "Master Hair Stylist",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        bio: "A master craftsman with 8+ years of expertise, Darshan has transformed over 300,000 clients. Trained at prestigious salons in Mehsana and Ahmedabad, he brings precision, creativity, and passion to every style.",
+        experience: "8+ years",
+        clients: "300,000+",
+        background: [
+            "2 years at Vaibhav Salon, Mehsana",
+            "6 years at Bonz Salon & Latest Academy, Ahmedabad"
+        ]
     }
 ];
 

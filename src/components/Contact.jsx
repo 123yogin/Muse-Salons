@@ -44,11 +44,11 @@ const Contact = () => {
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
                             {[
-                                { icon: <MapPin />, text: "123 Fashion Avenue, New York, NY 10001" },
-                                { icon: <Phone />, text: "+1 (555) 123-4567" },
-                                { icon: <Mail />, text: "hello@muse-salon.com" },
+                                { icon: <MapPin />, text: "D-93, Pamurkh Mastana Complex, Kudasan, Gandhinagar" },
+                                { icon: <Phone />, text: "+91 63552 55733" },
+                                { icon: <Mail />, text: "parekhdarshan19@gmail.com" },
                             ].map((item, index) => (
-                                <motion.div 
+                                <motion.div
                                     key={index}
                                     whileHover={{ x: 10 }}
                                     style={{ display: 'flex', alignItems: 'center', gap: '15px' }}
@@ -57,16 +57,15 @@ const Contact = () => {
                                     <p style={{ color: 'var(--color-text-gray)' }}>{item.text}</p>
                                 </motion.div>
                             ))}
-                            
-                            <motion.div 
+
+                            <motion.div
                                 whileHover={{ x: 10 }}
                                 style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}
                             >
                                 <div style={{ color: 'var(--color-gold)' }}><Clock /></div>
                                 <div>
-                                    <p style={{ color: 'var(--color-text-gray)' }}>Mon - Fri: 9:00 AM - 8:00 PM</p>
-                                    <p style={{ color: 'var(--color-text-gray)' }}>Sat: 10:00 AM - 6:00 PM</p>
-                                    <p style={{ color: 'var(--color-text-gray)' }}>Sun: Closed</p>
+                                    <p style={{ color: 'var(--color-text-gray)' }}>Mon - Sat: 10:00 AM - 10:00 PM</p>
+                                    <p style={{ color: 'var(--color-text-gray)' }}>Sun: 10:00 AM - 10:00 PM</p>
                                 </div>
                             </motion.div>
                         </div>
@@ -141,9 +140,9 @@ const Contact = () => {
                                     }}
                                 ></motion.textarea>
                             </div>
-                            <motion.button 
-                                type="button" 
-                                className="btn" 
+                            <motion.button
+                                type="button"
+                                className="btn"
                                 style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
