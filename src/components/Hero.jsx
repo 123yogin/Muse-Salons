@@ -5,11 +5,11 @@ const Hero = () => {
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 500], [0, 200]);
     const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-    
+
     const textVariants = {
         hidden: { opacity: 0, y: 50 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             y: 0,
             transition: { duration: 1, ease: "easeOut" }
         }
@@ -35,7 +35,7 @@ const Hero = () => {
             overflow: 'hidden',
         }}>
             {/* Parallax Background */}
-            <motion.div 
+            <motion.div
                 style={{
                     position: 'absolute',
                     top: 0,
@@ -108,7 +108,7 @@ const Hero = () => {
                         color: 'var(--color-white)'
                     }}
                 >
-                    Experience <motion.span 
+                    Experience <motion.span
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
@@ -160,8 +160,8 @@ const Hero = () => {
                     y: y2
                 }}
             />
-            
-             <motion.div
+
+            <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                 style={{
@@ -173,7 +173,7 @@ const Hero = () => {
                     border: '1px solid rgba(212, 175, 55, 0.05)',
                     borderRadius: '50%',
                     zIndex: 1,
-                     y: y2
+                    y: y2
                 }}
             />
 
@@ -181,7 +181,7 @@ const Hero = () => {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, y: [0, 10, 0] }}
-                transition={{ 
+                transition={{
                     opacity: { delay: 1, duration: 1 },
                     y: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
                 }}

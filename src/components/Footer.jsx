@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
+import logo from '../assets/MUSE unisex salon logo.png';
 
 const Footer = () => {
     const containerVariants = {
@@ -20,23 +21,22 @@ const Footer = () => {
 
     return (
         <footer style={{ backgroundColor: 'var(--color-black)', padding: '50px 0', borderTop: '1px solid rgba(212, 175, 55, 0.1)' }}>
-            <motion.div 
+            <motion.div
                 className="container text-center"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={containerVariants}
             >
-                <motion.div variants={itemVariants} style={{ marginBottom: '30px' }}>
-                    <h2 style={{ fontSize: '2rem', letterSpacing: '2px', marginBottom: '10px' }}>MUSE</h2>
-                    <p style={{ color: 'var(--color-text-gray)', fontSize: '0.9rem' }}>UNISEX SALON</p>
+                <motion.div variants={itemVariants} style={{ marginBottom: '30px', display: 'flex', justifyContent: 'center' }}>
+                    <img src={logo} alt="MUSE Unisex Salon" style={{ height: '150px', width: 'auto' }} />
                 </motion.div>
 
                 <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '30px' }}>
                     {[Facebook, Instagram, Twitter].map((Icon, index) => (
-                        <motion.a 
+                        <motion.a
                             key={index}
-                            href="#" 
+                            href="#"
                             style={{ color: 'var(--color-gold)' }}
                             whileHover={{ scale: 1.2, color: '#fff' }}
                             whileTap={{ scale: 0.9 }}

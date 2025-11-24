@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform, useInView, useSpring } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { motion, useInView, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 const Counter = ({ value, label }) => {
     const ref = useRef(null);
@@ -35,7 +35,7 @@ const About = () => {
         target: ref,
         offset: ["start end", "end start"]
     });
-    
+
     const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
     const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
@@ -59,7 +59,7 @@ const About = () => {
                     >
                         <motion.div style={{ y }}>
                             <div style={{ position: 'relative' }}>
-                                <motion.div 
+                                <motion.div
                                     initial={{ scale: 0 }}
                                     whileInView={{ scale: 1 }}
                                     transition={{ duration: 0.8, delay: 0.2 }}
