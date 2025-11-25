@@ -74,7 +74,7 @@ const About = () => {
                                     }}
                                 ></motion.div>
                                 <img
-                                    src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                    src="/about.jpg"
                                     alt="Salon Interior"
                                     style={{ width: '100%', height: 'auto', position: 'relative', zIndex: 1, display: 'block' }}
                                 />

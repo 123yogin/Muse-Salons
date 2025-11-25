@@ -42,7 +42,7 @@ const Hero = () => {
                     left: 0,
                     width: '100%',
                     height: '120%', // Taller for parallax
-                    backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url("https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")',
+                    backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url("/hero.jpg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     zIndex: 0,
