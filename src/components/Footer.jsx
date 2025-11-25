@@ -33,10 +33,16 @@ const Footer = () => {
                 </motion.div>
 
                 <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '30px' }}>
-                    {[Facebook, Instagram, Twitter].map((Icon, index) => (
+                    {[
+                        { Icon: Facebook, href: '#' },
+                        { Icon: Instagram, href: 'https://www.instagram.com/muse_unisex_salon?igsh=MWNuN3Brc240cXcycQ==' },
+                        { Icon: Twitter, href: '#' }
+                    ].map(({ Icon, href }, index) => (
                         <motion.a
                             key={index}
-                            href="#"
+                            href={href}
+                            target={href !== '#' ? '_blank' : undefined}
+                            rel={href !== '#' ? 'noopener noreferrer' : undefined}
                             style={{ color: 'var(--color-gold)' }}
                             whileHover={{ scale: 1.2, color: '#fff' }}
                             whileTap={{ scale: 0.9 }}
