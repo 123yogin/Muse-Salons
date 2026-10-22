@@ -58,7 +58,7 @@ const Team = () => {
                                 loading="lazy"
                                 width="1086"
                                 height="1448"
-                                style={{ width: '100%', aspectRatio: '3 / 4', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+                                style={{ width: '100%', height: 'auto', aspectRatio: '3 / 4', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
                             />
                             {/* Social Overlay */}
                             <div style={{

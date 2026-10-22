@@ -114,7 +114,7 @@ const Gallery = () => {
                                     color: 'white'
                                 }}
                             >
-                                <h4 style={{ color: 'var(--color-gold)', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', marginBottom: '5px' }}>{image.title}</h4>
+                                <p style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', marginBottom: '5px' }}>{image.title}</p>
                                 <p style={{ fontSize: 'clamp(0.8rem, 1vw, 0.9rem)', textTransform: 'uppercase', letterSpacing: '1px' }}>{image.category}</p>
                             </motion.div>
                         </motion.div>
