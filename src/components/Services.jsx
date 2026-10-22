@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronRight, Crown, Heart, Sparkles, Star } from 'lucide-react';
 import { useState } from 'react';
+import { whatsappLink } from '../whatsapp';
 
 const servicesData = {
     male: {
@@ -357,7 +358,19 @@ const WeddingCard = ({ pkg, icon, index }) => (
                 </li>
             ))}
         </ul>
-        <button style={{
+        <a
+            href={whatsappLink([
+                `Hello MUSE Unisex Salon! I would like to book this wedding package: ${pkg.name}.`,
+                '',
+                `Includes: ${pkg.features.join(', ')}`,
+                '',
+                'Please share available dates and details. Thank you!'
+            ])}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+            display: 'block',
+            textAlign: 'center',
             width: '100%',
             padding: '15px 25px',
             background: 'transparent',
@@ -373,8 +386,8 @@ const WeddingCard = ({ pkg, icon, index }) => (
             onMouseEnter={(e) => { e.target.style.background = 'var(--color-gold)'; e.target.style.color = 'var(--color-black)'; }}
             onMouseLeave={(e) => { e.target.style.background = 'transparent'; e.target.style.color = 'var(--color-gold)'; }}
         >
-            Book Now
-        </button>
+            Book on WhatsApp
+        </a>
     </motion.div>
 );
 

@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
-
-const WHATSAPP_NUMBER = '916355255733';
+import { whatsappLink } from '../whatsapp';
 
 const serviceOptions = [
     'Haircut & Styling',
@@ -53,8 +52,7 @@ const Contact = () => {
         ];
         if (form.message.trim()) lines.push(`Note: ${form.message.trim()}`);
         lines.push('', 'Please confirm my slot. Thank you!');
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
-        window.open(url, '_blank', 'noopener');
+        window.open(whatsappLink(lines), '_blank', 'noopener');
     };
 
     return (
