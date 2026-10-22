@@ -183,11 +183,7 @@ const Services = () => {
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 35vw, 400px), 1fr))',
-                            gap: '30px'
-                        }}>
+                        <div className="card-grid">
                             {servicesData[activeTab].categories.map((category, index) => (
                                 <motion.div
                                     key={category.name}
@@ -281,7 +277,7 @@ const Services = () => {
                     >
                         Bridal Packages
                     </motion.h3>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 40vw, 400px), 1fr))', gap: '30px', marginBottom: '80px' }}>
+                    <div className="card-grid" style={{ marginBottom: '80px' }}>
                         {weddingPackages.bridal.map((pkg, index) => (
                             <WeddingCard key={index} pkg={pkg} icon={<Crown size={30} />} index={index} />
                         ))}
@@ -297,7 +293,7 @@ const Services = () => {
                     >
                         Groom Packages
                     </motion.h3>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 40vw, 400px), 1fr))', gap: '30px' }}>
+                    <div className="card-grid">
                         {weddingPackages.groom.map((pkg, index) => (
                             <WeddingCard key={index} pkg={pkg} icon={<Star size={30} />} index={index} />
                         ))}
@@ -314,7 +310,7 @@ const WeddingCard = ({ pkg, icon, index }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: index * 0.15 }}
-        whileHover={{ y: -10, scale: 1.02 }}
+        whileHover={{ y: -6 }}
         style={{
             background: 'linear-gradient(145deg, rgba(20,20,20,1) 0%, rgba(30,30,30,1) 100%)',
             padding: '40px 30px',

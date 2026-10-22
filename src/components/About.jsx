@@ -75,7 +75,10 @@ const About = () => {
                                 ></motion.div>
                                 <img
                                     src="/about.jpg"
-                                    alt="Salon Interior"
+                                    alt="Interior of MUSE Unisex Salon"
+                                    loading="lazy"
+                                    width="960"
+                                    height="855"
                                     style={{ width: '100%', height: 'auto', position: 'relative', zIndex: 1, display: 'block' }}
                                 />
                             </div>

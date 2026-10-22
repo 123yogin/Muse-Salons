@@ -29,18 +29,19 @@ const Footer = () => {
                 variants={containerVariants}
             >
                 <motion.div variants={itemVariants} style={{ marginBottom: '30px', display: 'flex', justifyContent: 'center' }}>
-                    <img src={logo} alt="MUSE Unisex Salon" style={{ height: '150px', width: 'auto' }} />
+                    <img src={logo} alt="MUSE Unisex Salon" loading="lazy" width="149" height="150" style={{ height: '150px', width: 'auto' }} />
                 </motion.div>
 
                 <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '30px' }}>
                     {[
-                        { Icon: Facebook, href: '#' },
-                        { Icon: Instagram, href: 'https://www.instagram.com/muse_unisex_salon?igsh=MWNuN3Brc240cXcycQ==' },
-                        { Icon: Twitter, href: '#' }
-                    ].map(({ Icon, href }, index) => (
+                        { Icon: Facebook, href: '#', label: 'Facebook' }, // TODO: add real Facebook URL (placeholder)
+                        { Icon: Instagram, href: 'https://www.instagram.com/muse_unisex_salon?igsh=MWNuN3Brc240cXcycQ==', label: 'MUSE Unisex Salon on Instagram' },
+                        { Icon: Twitter, href: '#', label: 'Twitter / X' } // TODO: add real Twitter/X URL (placeholder)
+                    ].map(({ Icon, href, label }, index) => (
                         <motion.a
                             key={index}
                             href={href}
+                            aria-label={label}
                             target={href !== '#' ? '_blank' : undefined}
                             rel={href !== '#' ? 'noopener noreferrer' : undefined}
                             style={{ color: 'var(--color-gold)' }}

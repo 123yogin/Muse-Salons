@@ -45,8 +45,8 @@ const Contact = () => {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
                             {[
                                 { icon: <MapPin />, text: "D-93, Pamurkh Mastana Complex, Kudasan, Gandhinagar" },
-                                { icon: <Phone />, text: "+91 63552 55733" },
-                                { icon: <Mail />, text: "parekhdarshan19@gmail.com" },
+                                { icon: <Phone />, text: "+91 63552 55733", href: "tel:+916355255733" },
+                                { icon: <Mail />, text: "parekhdarshan19@gmail.com", href: "mailto:parekhdarshan19@gmail.com" },
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
@@ -54,7 +54,9 @@ const Contact = () => {
                                     style={{ display: 'flex', alignItems: 'center', gap: '15px' }}
                                 >
                                     <div style={{ color: 'var(--color-gold)' }}>{item.icon}</div>
-                                    <p style={{ color: 'var(--color-text-gray)' }}>{item.text}</p>
+                                    <p style={{ color: 'var(--color-text-gray)' }}>
+                                        {item.href ? <a href={item.href} style={{ color: 'inherit', textDecoration: 'none' }}>{item.text}</a> : item.text}
+                                    </p>
                                 </motion.div>
                             ))}
 

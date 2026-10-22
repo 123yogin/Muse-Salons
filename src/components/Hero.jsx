@@ -81,12 +81,14 @@ const Hero = () => {
             ))}
 
             <div className="container text-center" style={{ position: 'relative', zIndex: 10 }}>
-                <motion.h2
+                <motion.p
                     initial="hidden"
                     animate="visible"
                     variants={textVariants}
                     style={{
                         color: 'var(--color-gold)',
+                        fontFamily: 'var(--font-heading)',
+                        fontWeight: 700,
                         fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                         letterSpacing: '3px',
                         textTransform: 'uppercase',
@@ -94,7 +96,7 @@ const Hero = () => {
                     }}
                 >
                     Welcome to Muse
-                </motion.h2>
+                </motion.p>
 
                 <motion.h1
                     initial="hidden"

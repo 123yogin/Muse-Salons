@@ -37,7 +37,7 @@ const StickyCTA = () => {
                 Book Now
             </a>
             <style>{`
-                @media (min-width: 769px) {
+                @media (min-width: 768px) {
                     .sticky-cta { display: none !important; }
                 }
             `}</style>

@@ -5,39 +5,45 @@ import { useState } from 'react';
 const galleryImages = [
     {
         id: 1,
-        src: "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        category: "Hair Color",
-        title: "Vibrant Balayage"
+        src: "/gallery/facial.jpg",
+        category: "Skin Care",
+        title: "Glow Facial",
+        alt: "AI-generated illustration of a woman receiving a glow facial treatment in a salon"
     },
     {
         id: 2,
-        src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        category: "Styling",
-        title: "Bridal Elegance"
+        src: "/gallery/hairspa.jpg",
+        category: "Hair Spa",
+        title: "Hair Spa & Head Massage",
+        alt: "AI-generated illustration of a hair spa and head massage treatment in a salon"
     },
     {
         id: 3,
-        src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        category: "Grooming",
-        title: "Classic Fade"
+        src: "/gallery/bridalmakeup.jpg",
+        category: "Bridal",
+        title: "Bridal Makeup",
+        alt: "AI-generated illustration of bridal makeup being applied in a salon"
     },
     {
         id: 4,
-        src: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        category: "Hair Color",
-        title: "Platinum Blonde"
+        src: "/gallery/fade.jpg",
+        category: "Men's Grooming",
+        title: "Skin Fade Haircut",
+        alt: "AI-generated illustration of a man getting a skin fade haircut in a salon"
     },
     {
         id: 5,
-        src: "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        category: "Styling",
-        title: "Modern Bob"
+        src: "/gallery/shave.jpg",
+        category: "Men's Grooming",
+        title: "Classic Razor Shave",
+        alt: "AI-generated illustration of a classic razor shave in a salon"
     },
     {
         id: 6,
-        src: "https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        category: "Treatment",
-        title: "Keratin Smoothing"
+        src: "/gallery/pedicure.jpg",
+        category: "Beauty",
+        title: "Rose Pedicure",
+        alt: "AI-generated illustration of a rose pedicure treatment in a salon"
     }
 ];
 
@@ -54,16 +60,13 @@ const Gallery = () => {
                     className="text-center"
                     style={{ marginBottom: '60px' }}
                 >
-                    <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '15px' }}>Our Work</h2>
+                    <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '15px' }}>Style Inspiration</h2>
                     <div style={{ width: '60px', height: '3px', background: 'var(--color-gold)', margin: '0 auto 20px' }}></div>
-                    <p style={{ color: 'var(--color-text-gray)' }}>Browse our portfolio of transformations.</p>
+                    <p style={{ color: 'var(--color-text-gray)' }}>A glimpse of the services we offer at Muse.</p>
+                    <p style={{ color: 'var(--color-text-gray)', fontSize: '0.8rem', opacity: 0.7, marginTop: '8px' }}>Images are AI-generated illustrations set in our salon, not photos of client work.</p>
                 </motion.div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(clamp(250px, 40vw, 350px), 1fr))',
-                    gap: '20px'
-                }}>
+                <div className="card-grid" style={{ gap: '20px' }}>
                     {galleryImages.map((image, index) => (
                         <motion.div
                             key={image.id}
@@ -83,7 +86,10 @@ const Gallery = () => {
                         >
                             <img
                                 src={image.src}
-                                alt={image.title}
+                                alt={image.alt}
+                                loading="lazy"
+                                width="1000"
+                                height="1000"
                                 style={{
                                     width: '100%',
                                     height: '100%',
@@ -145,10 +151,14 @@ const Gallery = () => {
                             onClick={() => setSelectedImage(null)}
                             style={{
                                 position: 'absolute',
-                                top: '-40px',
-                                right: '-40px',
-                                background: 'none',
+                                top: '10px',
+                                right: '10px',
+                                zIndex: 1,
+                                background: 'rgba(0, 0, 0, 0.6)',
                                 border: 'none',
+                                borderRadius: '50%',
+                                padding: '6px',
+                                display: 'flex',
                                 color: 'white',
                                 cursor: 'pointer'
                             }}
@@ -157,7 +167,7 @@ const Gallery = () => {
                         </button>
                         <img
                             src={selectedImage.src}
-                            alt={selectedImage.title}
+                            alt={selectedImage.alt}
                             style={{ maxHeight: '85vh', maxWidth: '100%', borderRadius: '4px', boxShadow: '0 0 30px rgba(0,0,0,0.5)' }}
                         />
                         <div style={{ textAlign: 'center', marginTop: '15px' }}>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.css'
 import LandingPage from './pages/LandingPage'
 import CustomCursor from './components/CustomCursor';
 import Preloader from './components/Preloader';
