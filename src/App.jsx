@@ -5,16 +5,28 @@ import Preloader from './components/Preloader';
 import { AnimatePresence } from 'framer-motion';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  // Show the logo intro only on the first visit in a browser session
+  const [isLoading, setIsLoading] = useState(() => {
+    try {
+      return !sessionStorage.getItem('muse-intro-seen');
+    } catch {
+      return true;
+    }
+  });
 
   useEffect(() => {
-    // Simulate loading time
+    if (!isLoading) return;
+    try {
+      sessionStorage.setItem('muse-intro-seen', '1');
+    } catch {
+      // Storage unavailable; the intro will just show again next time
+    }
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3500); // Matches animation duration in Preloader
+    }, 1200); // Matches animation duration in Preloader
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isLoading]);
 
   return (
     <>
@@ -22,7 +34,7 @@ function App() {
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-      {!isLoading && <LandingPage />}
+      <LandingPage />
     </>
   )
 }

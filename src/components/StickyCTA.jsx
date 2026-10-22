@@ -1,12 +1,24 @@
 import { motion } from 'framer-motion';
 import { CalendarCheck } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const StickyCTA = () => {
+    // Hide while the booking form is on screen so it doesn't cover the submit button
+    const [contactVisible, setContactVisible] = useState(false);
+
+    useEffect(() => {
+        const contact = document.getElementById('contact');
+        if (!contact) return;
+        const observer = new IntersectionObserver(([entry]) => setContactVisible(entry.isIntersecting), { threshold: 0.1 });
+        observer.observe(contact);
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <motion.div
             initial={{ y: 100 }}
-            animate={{ y: 0 }}
-            transition={{ delay: 2, duration: 0.5 }}
+            animate={{ y: contactVisible ? 120 : 0 }}
+            transition={{ delay: contactVisible ? 0 : 1, duration: 0.4 }}
             style={{
                 position: 'fixed',
                 bottom: '20px',

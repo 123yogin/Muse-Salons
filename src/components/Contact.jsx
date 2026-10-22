@@ -1,9 +1,60 @@
 import { motion } from 'framer-motion';
 import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { useState } from 'react';
+
+const WHATSAPP_NUMBER = '916355255733';
+
+const serviceOptions = [
+    'Haircut & Styling',
+    'Hair Spa / Head Massage',
+    'Hair Coloring',
+    'Keratin / Straightening / Botox',
+    'Facial',
+    'Beard Trim / Shave',
+    'Manicure / Pedicure',
+    'Waxing',
+    'Bridal Package',
+    'Groom Package',
+    'Other'
+];
+
+const fieldStyle = {
+    width: '100%',
+    padding: '12px',
+    background: 'var(--color-dark-gray)',
+    border: '1px solid transparent',
+    color: 'white',
+    outline: 'none',
+    borderRadius: '4px',
+    fontFamily: 'inherit',
+    fontSize: '1rem',
+    colorScheme: 'dark'
+};
 
 const Contact = () => {
     const inputVariants = {
-        focus: { scale: 1.02, borderColor: "var(--color-gold)", transition: { duration: 0.3 } }
+        focus: { borderColor: "var(--color-gold)", transition: { duration: 0.3 } }
+    };
+    const [form, setForm] = useState({ name: '', service: '', date: '', time: '', message: '' });
+    const today = new Date().toISOString().split('T')[0];
+
+    const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const date = new Date(form.date + 'T00:00').toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+        const lines = [
+            'Hello MUSE Unisex Salon! I would like to book an appointment.',
+            '',
+            `Name: ${form.name}`,
+            `Service: ${form.service}`,
+            `Date: ${date}`,
+            `Time: ${form.time ? new Date(`2000-01-01T${form.time}`).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit', hour12: true }).toUpperCase() : 'Any time'}`
+        ];
+        if (form.message.trim()) lines.push(`Note: ${form.message.trim()}`);
+        lines.push('', 'Please confirm my slot. Thank you!');
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+        window.open(url, '_blank', 'noopener');
     };
 
     return (
@@ -88,68 +139,91 @@ const Contact = () => {
                             border: '1px solid rgba(212, 175, 55, 0.1)'
                         }}
                     >
-                        <h3 style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', marginBottom: '20px', color: 'var(--color-white)' }}>Send a Message</h3>
-                        <form>
+                        <h3 style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', marginBottom: '8px', color: 'var(--color-white)' }}>Book an Appointment</h3>
+                        <p style={{ color: 'var(--color-text-gray)', fontSize: '0.9rem', marginBottom: '20px' }}>Fill this in and we'll open WhatsApp with your request ready to send.</p>
+                        <form onSubmit={handleSubmit}>
                             <div style={{ marginBottom: '15px' }}>
                                 <motion.input
                                     whileFocus="focus"
                                     variants={inputVariants}
                                     type="text"
+                                    name="name"
+                                    aria-label="Your name"
                                     placeholder="Your Name"
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        background: 'var(--color-dark-gray)',
-                                        border: '1px solid transparent',
-                                        color: 'white',
-                                        outline: 'none',
-                                        borderRadius: '4px'
-                                    }}
+                                    required
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    style={fieldStyle}
                                 />
                             </div>
                             <div style={{ marginBottom: '15px' }}>
-                                <motion.input
+                                <motion.select
                                     whileFocus="focus"
                                     variants={inputVariants}
-                                    type="email"
-                                    placeholder="Your Email"
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        background: 'var(--color-dark-gray)',
-                                        border: '1px solid transparent',
-                                        color: 'white',
-                                        outline: 'none',
-                                        borderRadius: '4px'
-                                    }}
-                                />
+                                    name="service"
+                                    aria-label="Service"
+                                    required
+                                    value={form.service}
+                                    onChange={handleChange}
+                                    style={{ ...fieldStyle, color: form.service ? 'white' : 'var(--color-text-gray)' }}
+                                >
+                                    <option value="" disabled>Select a Service</option>
+                                    {serviceOptions.map((option) => (
+                                        <option key={option} value={option} style={{ color: 'white' }}>{option}</option>
+                                    ))}
+                                </motion.select>
+                            </div>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '15px' }}>
+                                <label style={{ flex: '1 1 140px', color: 'var(--color-text-gray)', fontSize: '0.8rem' }}>
+                                    Date
+                                    <motion.input
+                                        whileFocus="focus"
+                                        variants={inputVariants}
+                                        type="date"
+                                        name="date"
+                                        required
+                                        min={today}
+                                        value={form.date}
+                                        onChange={handleChange}
+                                        style={{ ...fieldStyle, marginTop: '5px' }}
+                                    />
+                                </label>
+                                <label style={{ flex: '1 1 140px', color: 'var(--color-text-gray)', fontSize: '0.8rem' }}>
+                                    Time (10 AM - 10 PM)
+                                    <motion.input
+                                        whileFocus="focus"
+                                        variants={inputVariants}
+                                        type="time"
+                                        name="time"
+                                        min="10:00"
+                                        max="21:30"
+                                        value={form.time}
+                                        onChange={handleChange}
+                                        style={{ ...fieldStyle, marginTop: '5px' }}
+                                    />
+                                </label>
                             </div>
                             <div style={{ marginBottom: '20px' }}>
                                 <motion.textarea
                                     whileFocus="focus"
                                     variants={inputVariants}
-                                    placeholder="Message"
-                                    rows="4"
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        background: 'var(--color-dark-gray)',
-                                        border: '1px solid transparent',
-                                        color: 'white',
-                                        outline: 'none',
-                                        resize: 'none',
-                                        borderRadius: '4px'
-                                    }}
+                                    name="message"
+                                    aria-label="Note (optional)"
+                                    placeholder="Note (optional)"
+                                    rows="3"
+                                    value={form.message}
+                                    onChange={handleChange}
+                                    style={{ ...fieldStyle, resize: 'none' }}
                                 ></motion.textarea>
                             </div>
                             <motion.button
-                                type="button"
+                                type="submit"
                                 className="btn"
                                 style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                Send Message <Send size={18} />
+                                Book on WhatsApp <Send size={18} />
                             </motion.button>
                         </form>
                     </motion.div>

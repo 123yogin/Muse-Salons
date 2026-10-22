@@ -6,7 +6,7 @@ const Preloader = () => {
         <motion.div
             initial={{ opacity: 1 }}
             animate={{ opacity: 0, pointerEvents: "none" }}
-            transition={{ duration: 0.8, delay: 2.5, ease: "easeInOut" }}
+            transition={{ duration: 0.4, delay: 0.8, ease: "easeInOut" }}
             style={{
                 position: 'fixed',
                 top: 0,
@@ -26,7 +26,7 @@ const Preloader = () => {
                     alt="MUSE Unisex Salon"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                     style={{
                         width: '300px',
                         height: 'auto',
